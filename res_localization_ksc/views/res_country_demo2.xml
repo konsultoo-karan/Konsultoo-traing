@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_country_demo2_tree" model="ir.ui.view">
+        <field name="name">res.country.demo2.tree</field>
+        <field name="model">res.country.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="short_code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_country_demo2_form" model="ir.ui.view">
+        <field name="name">res.country.demo2.form</field>
+        <field name="model">res.country.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="short_code"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name='states' string='State'>
+                            <field name="state_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="res_country_demo2_search" model="ir.ui.view">
+        <field name="name">res country search</field>
+        <field name="model">res.country.ksc</field>
+        <field name="arch" type="xml">
+            <search string="Search country">
+
+                <!--                normal search -->
+
+                <field name="name"/>
+                <field name="short_code"/>
+
+            </search>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_res_country2">
+        <field name="name">Res country</field>
+        <field name="res_model">res.country.ksc</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_res_country" name="Countries" groups="base.group_user" sequence="2"/>
+    <menuitem id="res_country_data" name="Localization" parent="menu_res_country" groups="base.group_user"
+              sequence="1"/>
+    <menuitem id='res_country' name='Countries' parent="res_country_data" action="action_res_country2"
+              groups="base.group_user" sequence="2"/>
+</odoo>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_state_ksc_tree" model="ir.ui.view">
+        <field name="name">res.state.ksc.tree</field>
+        <field name="model">res.state.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_id"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_state_ksc_form" model="ir.ui.view">
+        <field name="name">res.state.ksc.form</field>
+        <field name="model">res.state.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="country_id"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name='cities' string='Cities'>
+                            <field name="cities"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_state_demo1_filter" model="ir.ui.view">
+        <field name="name">res state ksc search</field>
+        <field name="model">res.state.ksc</field>
+        <field name="arch" type="xml">
+            <search string="Search Partner">
+
+                <!--                normal search -->
+
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_id"/>
+
+
+                <!--                group example -->
+                <group expand="0" string="Group By">
+                    <filter string="Country" name="country" domain="[]" context="{'group_by': 'country_id'}"/>
+                </group>
+
+                <!--                filter example-->
+                <filter string="Is  Active" name="filter_is_active" domain="[('active','=', True)]"
+                        help="Is active"/>
+                <filter string="Is Not Active" name="filter_is_not_active" domain="[('active','=', False)]"
+                        help="Is not active"/>
+
+            </search>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_res_state_ksc">
+        <field name="name">res state ksc</field>
+        <field name="res_model">res.state.ksc</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <menuitem id='country_data' name='State' parent="res_country_data" action="action_res_state_ksc"/>
+
+
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_city_ksc_tree" model="ir.ui.view">
+        <field name="name">res.city.ksc.tree</field>
+        <field name="model">res.city.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_city_ksc_form" model="ir.ui.view">
+        <field name="name">res.city.ksc.form</field>
+        <field name="model">res.city.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="state"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_city_demo1_filter" model="ir.ui.view">
+        <field name="name">res city ksc search</field>
+        <field name="model">res.city.ksc</field>
+        <field name="arch" type="xml">
+            <search string="Search Partner">
+
+                <!--                normal search -->
+
+                <field name="name"/>
+                <field name="state"/>
+
+
+                <!--                group example -->
+                <group expand="0" string="Group By">
+                    <filter string="State" name="state" domain="[]" context="{'group_by': 'state'}"/>
+                </group>
+
+                <!--                filter example-->
+
+
+            </search>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_res_city_ksc">
+        <field name="name">res city ksc</field>
+        <field name="res_model">res.city.ksc</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <menuitem id='city_data' name='city' parent="res_country_data" action="action_res_city_ksc"/>
+
+
+</odoo>
