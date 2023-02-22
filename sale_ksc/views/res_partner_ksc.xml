@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_ksc_tree" model="ir.ui.view">
+        <field name="name">res.partner.ksc.tree</field>
+        <field name="model">res.partner.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="street_1"/>
+                <field name="country_id"/>
+                <field name="state_id"/>
+                <field name="zip_code"/>
+                <field name="email"/>
+                <field name="mobile"/>
+                <field name="phone"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_partner_ksc_form" model="ir.ui.view">
+        <field name="name">res.partner.ksc.form</field>
+        <field name="model">res.partner.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="street_1"/>
+                            <field name="street_2"/>
+                            <field name="country_id"/>
+                            <field name="state_id"/>
+                            <field name="city_id"/>
+                            <field name="zip_code"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="mobile"/>
+                            <field name="phone"/>
+                            <field name="photo"/>
+                            <field name="website"/>
+                            <field name="active"/>
+                            <field name="parent_id"/>
+                            <field name="address_type"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name='Child Category' string='Child Category'>
+                            <field name="child_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_partner_ksc_search" model="ir.ui.view">
+        <field name="name">res.partner.ksc.search</field>
+        <field name="model">res.partner.ksc</field>
+        <field name="arch" type="xml">
+            <search string="Search partner order">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="res_partner_ksc_action">
+        <field name="name">res partner</field>
+        <field name="res_model">res.partner.ksc</field>
+        <field name="view_mode">tree,form,search</field>
+
+    </record>
+
+    <menuitem id="menu_partner_ksc" sequence="2"/>
+    <menuitem id="menu_res_partner_ksc" name="res partner" parent="product_category_ksc_id_1"
+              action="res_partner_ksc_action"
+              sequence="6"/>
+
+</odoo>

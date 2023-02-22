@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_uom_category_ksc_tree" model="ir.ui.view">
+        <field name="name">product.uom.category.ksc.tree</field>
+        <field name="model">product.uom.category.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_uom_category_ksc_form" model="ir.ui.view">
+        <field name="name">product.uom.category.ksc.form</field>
+        <field name="model">product.uom.category.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page name='Category page' string='Categories'>
+                            <field name="uom_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_uom_category_ksc_search" model="ir.ui.view">
+        <field name="name">product uom category ksc search</field>
+        <field name="model">product.uom.category.ksc</field>
+        <field name="arch" type="xml">
+            <search string="Search Uom category">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_product_uom_category_ksc">
+        <field name="name">product uom category ksc</field>
+        <field name="res_model">product.uom.category.ksc</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="product_uom_category_ksc_search_id_2" name="Uom Category"
+              parent="product_category_ksc_id_1"
+              action="action_product_uom_category_ksc"
+              sequence="3"/>
+
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_ksc_tree" model="ir.ui.view">
+        <field name="name">sale.order.ksc.tree</field>
+        <field name="model">sale.order.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="customer_id"/>
+                <field name="invoice_id" domain="[('address_type', '=', 'invoice')]"/>
+                <field name="shiping_id" domain="[('address_type', '=', 'contact')]"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_order_ksc_form" model="ir.ui.view">
+        <field name="name">sale.order.ksc.tree</field>
+        <field name="model">sale.order.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sale_order_date"/>
+                            <field name="user_id"/>
+                            <field name="state"/>
+                        </group>
+                        <group>
+                            <field name="customer_id"/>
+                            <field name="invoice_id"/>
+                            <field name="shiping_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_order_ksc_search" model="ir.ui.view">
+        <field name="name">sale.order.ksc.tree</field>
+        <field name="model">sale.order.ksc</field>
+        <field name="arch" type="xml">
+            <search string="Search sale order">
+                <field name="sale_order_date"/>
+                <field name="user_id"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="sale_order_ksc_action">
+        <field name="name">sale order ksc</field>
+        <field name="res_model">sale.order.ksc</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_sale_order_ksc" sequence="2"/>
+    <menuitem id="menu_sale_order_ksc_2" name="sale order" parent="product_category_ksc_id_1"
+              action="sale_order_ksc_action"
+              sequence="5"/>
+
+</odoo>

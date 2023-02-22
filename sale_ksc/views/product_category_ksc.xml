@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_category_ksc_tree" model="ir.ui.view">
+        <field name="name">product category.ksc.tree</field>
+        <field name="model">product.category.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="parent_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_category_ksc_form" model="ir.ui.view">
+        <field name="name">product category.ksc.form</field>
+        <field name="model">product.category.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="parent_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_category_ksc_filter" model="ir.ui.view">
+        <field name="name">product category ksc search</field>
+        <field name="model">product.category.ksc</field>
+        <field name="arch" type="xml">
+            <search string="Search category">
+
+                <!--                normal search -->
+
+                <field name="name"/>
+                <field name="parent_id"/>
+
+                <!--                group example -->
+
+
+                <!--                filter example-->
+
+
+            </search>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_product_category_ksc">
+        <field name="name">product category ksc</field>
+        <field name="res_model">product.category.ksc</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="product_category_menu" name="sale ksc"/>
+    <menuitem id="product_category_ksc_id_1" name="My Sales" parent="product_category_menu"
+              sequence="1"/>
+    <menuitem id='product_category_ksc_id_2' name='Category' parent="product_category_ksc_id_1" action="action_product_category_ksc"
+    sequence="1"/>
+
+</odoo>

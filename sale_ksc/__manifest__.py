@@ -1,0 +1,22 @@
+{
+    'name': 'sale_ksc',
+    'version': '15.0.1.1.0',
+    'summary': 'sale_ksc  information',
+    'description': """Helps to show sale_ksc information""",
+    'category': 'Human Resources',
+    'depends': ['base'],
+    'data': [
+        'security/ir.model.access.csv',
+        # 'security/sale_order_sequirty.xml',
+        'views/product_category_ksc.xml',
+        'views/product_ksc.xml',
+        'views/product_uom_category_ksc.xml',
+        'views/product_uom_ksc.xml',
+        'views/sale_order_ksc.xml',
+        'views/res_partner_ksc.xml',
+    ],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    'license': 'LGPL-3',
+}
