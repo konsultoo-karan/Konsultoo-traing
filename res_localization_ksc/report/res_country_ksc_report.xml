@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="res_country_ksc_of_report" model="ir.actions.report">
-<!--        <field name="name">Country Ksc</field>-->
+    <record id="report_country_ksc1" model="ir.actions.report">
+        <field name="name">Country Ksc</field>
         <field name="model">res.country.ksc</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">res_localization_ksc.report_country_ksc</field>
-        <field name="report_file">res_localization_ksc.report_country_ksc</field>
+        <field name="report_name">res_localization_ksc.report_country_ksc1</field>
+        <field name="report_file">res_localization_ksc.report_country_ksc1</field>
         <field name="binding_model_id" ref="model_res_country_ksc"/>
         <field name="print_report_name">'Country Information - %s' % (object.name)</field>
         <field name="binding_type">report</field>
