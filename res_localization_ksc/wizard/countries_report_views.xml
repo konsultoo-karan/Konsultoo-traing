@@ -1,0 +1,30 @@
+<odoo>
+    <record id="country_wizard_form" model="ir.ui.view">
+        <field name="name">country.wizard.form.view</field>
+        <field name="model">country.ksc.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                    </group>
+                </group>
+                <footer>
+                    <button class="btn-primary" name="print_report" type="object" string="Print"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_country_ksc_wizard" model="ir.actions.act_window">
+        <field name="name">Print Country Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">country.ksc.wizard</field>
+        <field name="view_id" ref="country_wizard_form"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="res_localization_ksc.model_res_country_ksc"/>
+        <field name="binding_view_types">form</field>
+    </record>
+</odoo>

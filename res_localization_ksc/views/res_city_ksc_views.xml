@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+        <record id="res_city_form_view_ksc" model="ir.ui.view">
+            <field name="name">res.city.tree</field>
+            <field name="model">res.city.ksc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="state_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="res_city_tree_view" model="ir.ui.view">
+            <field name="name">res.city.form.view</field>
+            <field name="model">res.city.ksc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+
+                            </group>
+                            <group>
+                                <field name="state_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="res_city_model_search_view_knc" model="ir.ui.view">
+            <field name="model">res.city.ksc</field>
+            <field name="arch" type="xml">
+                <search string="Model Description">
+                    <field name="name"/>
+                    <field name="state_id"/>
+
+                </search>
+            </field>
+        </record>
+
+        <record id="action_res_city_information" model="ir.actions.act_window">
+            <field name="name">City Information</field>
+            <field name="res_model">res.city.ksc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="City Information" parent="country_res_information_main_of_the_information" id="city_res_information_main_of_the_information"
+                  action="action_res_city_information" />
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

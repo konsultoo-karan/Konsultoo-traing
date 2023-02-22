@@ -1,0 +1,78 @@
+<odoo>
+    <data>
+
+        <template id="report_country_ksc">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h1>ABCD</h1>
+                            <t t-esc="name"/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_country_ksc_2">
+            <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure">
+                            <div class="text-center">
+                                <h2>Country Information</h2>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td>Country Name</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-if="form_data.get('name')">
+                                            <t t-esc="form_data['name']"/>
+                                        </t>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Country Code</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-if="form_data.get('code')">
+                                            <t t-esc="form_data['code']"/>
+                                        </t>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                            <table class="table table-bordered" style="table-layout: fixed">
+                                <thead style="display: table-row-group">
+                                    <tr>
+                                        <th class="text-center" style="width: 30%" scope="col">Country Name</th>
+                                        <th class="text-center" style="width: 20%" scope="col">Country Code</th>
+                                    </tr>
+                                </thead>
+
+                                    <t t-foreach="docs" t-as="line">
+                                        <tr>
+                                            <t t-if="line.name">
+                                                <td name="td_name" class="text-center">
+                                                    <span t-field="line.name"/>
+                                                </td>
+                                                <td name="td_code" class="text-center">
+                                                    <span t-field="line.code"/>
+                                                </td>
+
+                                            </t>
+                                        </tr>
+                                    </t>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,68 @@
+
+<odoo>
+
+    <record id="view_res_country_ksc_tree" model="ir.ui.view">
+        <field name="name">view_res_country_ksc_tree</field>
+        <field name="model">res.country.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_res_country_ksc_form" model="ir.ui.view">
+        <field name="name">view_res_country_ksc_form</field>
+        <field name="model">res.country.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="state_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_res_country_ksc_search" model="ir.ui.view">
+        <field name="name">res.country.ksc Search View</field>
+        <field name="model">res.country.ksc</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <!--                 <field name="code"/> -->
+            </search>
+        </field>
+    </record>
+
+    <record id="action_res_country_information" model="ir.actions.act_window">
+        <field name="name">Countries</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.country.ksc</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+        <menuitem name="Localization" id="localization_res_information_of_main_ksc"/>
+        <menuitem name="Localization Ksc" parent="localization_res_information_of_main_ksc" id="country_res_information_main_of_the_information"
+                  action="action_res_country_information" />
+        <menuitem name="Country Information" parent="country_res_information_main_of_the_information" id="country_res_information_main_information_of_some"
+                  action="action_res_country_information" />
+
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
