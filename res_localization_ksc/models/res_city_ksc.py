@@ -5,7 +5,7 @@ class Rescity(models.Model):
         _description = 'city information'
 
 
-        name = fields.Char(string="Name Of City")
+        name = fields.Char(string="Name ggg Of City")
         state_id = fields.Many2one(comodel_name='res.state.ksc', string='State Name ')
 
 
