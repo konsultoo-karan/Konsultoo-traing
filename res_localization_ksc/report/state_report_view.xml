@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_state" model="ir.actions.report">
+            <field name="name">State report</field>
+            <field name="model">res.state.ksc</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">res_localization_ksc.report_state_action_template</field>
+            <field name="report_file">res_localization_ksc.report_state_action_template</field>
+            <field name="print_report_name">Res State Ksc - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="res_localization_ksc.model_res_state_ksc"/>
+            <field name="binding_type">report</field>
+        </record>
+
+
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

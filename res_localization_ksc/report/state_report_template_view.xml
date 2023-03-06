@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="report_state_action_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <br/>
+                        <br/>
+                        <ul>
+                            <h2>
+                                <t t-if="name">
+                                    <t t-esc="name"/>
+                                </t>
+                            </h2>
+
+                            <h1>State Report</h1>
+                            <li>State Name :
+                                <span t-field="o.name"/>
+                            </li>
+                            <li>State Code :
+                                <span t-field="o.state_code"/>
+                            </li>
+                            <li>country :
+                                <span t-field="o.country_id.name"/>
+                            </li>
+                            <li>Other information are mentioned below:-</li>
+                            <table width="100%" style="border:1px solid black;border-collapse:collapse;">
+                                <tr>
+                                    <th width="30">State Name</th>
+                                    <th width="30">City Name</th>
+                                    <!--                                    <th width="30">State Code</th>-->
+                                </tr>
+                                <t t-foreach="o.cities_ids" t-as="c">
+                                    <tr>
+                                        <td>
+                                            <span t-field="c.state_list_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="c.name"/>
+                                        </td>
+                                    </tr>
+                                </t>
+
+                            </table>
+                            <t t-foreach="o.cities_ids" t-as="c">
+                                <span t-field="c.name"/>
+                                and State is
+                                <span t-field="c.state_list_id"/>
+                            </t>
+                            <t t-foreach="o.country_id" t-as="sl">
+                                <span t-field="sl.name"/>
+                            </t>
+                        </ul>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+
+</odoo>

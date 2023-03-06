@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="res_city_list_view" model="ir.ui.view">
+            <field name="name">city.list.view</field>
+            <field name="model">res.city.ksc</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="name"/>
+                    <field name="state_list_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="res_city_search_view" model="ir.ui.view">
+            <field name="name">res.city.search.view</field>
+            <field name="model">res.city.ksc</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="City name"/>
+                    <field name="state_list_id" string="state list"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="res_city_action_detail" model="ir.actions.act_window">
+            <field name="name">City</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.city.ksc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="city_root_menu_view" name="City" action="res_city_action_detail"
+                  parent="localization_menu_id"  groups="base.group_user"/>
+
+    </data>
+
+</odoo>
