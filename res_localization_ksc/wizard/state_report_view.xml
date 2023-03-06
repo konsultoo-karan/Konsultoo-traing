@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="state_wizard_form" model="ir.ui.view">
+        <field name="name">state.wizard.form.view</field>
+        <field name="model">state.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </group>
+<!--                <footer>-->
+<!--                    <button special="cancel" data-hotkey="z" string="Oops, no!" class="btn-primary"/>-->
+<!--                    <button name="install_demo" string="Yes, I understand the risks" type="object" class="btn-secondary" data-hotkey="q"/>-->
+<!--                </footer>-->
+                <footer>
+                    <button class="btn-primary" name="print_report" type="object" string="Print"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_state_label_wizard" model="ir.actions.act_window">
+        <field name="name">Print State Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">state.wizard</field>
+        <field name="view_id" ref="state_wizard_form"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="res_localization_ksc.model_res_state_ksc"/>
+        <field name="binding_view_types">form</field>
+    </record>
+</odoo>

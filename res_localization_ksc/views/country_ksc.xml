@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <!--    TreeView-->
+    <record id="view_res_country_ksc_tree" model="ir.ui.view">
+        <field name="name">view_res_country_ksc_tree</field>
+        <field name="model">res.country.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--            FormView         -->
+
+    <record id="view_res_country_ksc_form" model="ir.ui.view">
+        <field name="name">view_res_country_ksc_form</field>
+        <field name="model">res.country.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="state_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    SearchView   -->
+    <record id="view_res_country_ksc_search" model="ir.ui.view">
+        <field name="name">res.country.ksc Search View</field>
+        <field name="model">res.country.ksc</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+<!--                <field name="code"/>-->
+            </search>
+        </field>
+    </record>
+
+    <record id="action_res_localization_ksc_profile" model="ir.actions.act_window">
+        <field name="name">Countries</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.country.ksc</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <!--main Menu Item Show On Front Of Side -->
+    <menuitem id="location_menu" name="Localization" groups="base.group_user"/>
+    <menuitem id="res_localization_ksc_main_menu" parent="location_menu" action="action_res_localization_ksc_profile"
+              name="Localization" groups="base.group_user"/>
+    <menuitem id="res_countries_ksc_main_menu" parent="res_localization_ksc_main_menu"
+              action="action_res_localization_ksc_profile"
+              name="Countries" groups="base.group_user"/>
+
+</odoo>
