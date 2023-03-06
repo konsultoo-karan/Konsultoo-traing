@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_state_tree_view" model="ir.ui.view">
+        <field name="name">res.state.tree.view</field>
+        <field name="model">res.state.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="state_name"/>
+                <field name="state_code"/>
+                <field name="country_id"/>
+                <field name="cities_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_state_form_view" model="ir.ui.view">
+        <field name="name">res.state.form.view</field>
+        <field name="model">res.state.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="state_name"/>
+                        <field name="state_code"/>
+                        <field name="country_id"/>
+                        <field name="cities_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_state_search_view" model="ir.ui.view">
+        <field name="name">res.state.search.view</field>
+        <field name="model">res.state.ksc</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="state_name"/>
+                <field name="state_code"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_res_state_ksc" model="ir.actions.act_window">
+        <field name="name">States</field>
+        <field name="res_model">res.state.ksc</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="res_state_ksc_menu" action="action_res_state_ksc" name="States" parent="res_localization_ksc_menu"
+              groups="base.group_user"/>
+
+</odoo>

@@ -1,0 +1,55 @@
+<odoo>
+    <template id='state_report_id_1'>
+        <t t-call='web.html_container'>
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <h1>State Report</h1>
+                        <li>State Name :
+                            <t t-esc="o.state_name"/>
+                        </li>
+                        <li>State Code :
+                            <t t-esc="o.state_code"/>
+                        </li>
+                        <li>country:
+                            <t t-esc="o.country_id.country_name"/>
+                        </li>
+                        <li>cities:
+                            <t t-esc="o.cities_ids.city_name"/>
+                        </li>
+                        <h2>
+                            <t t-esc="name"/>
+                        </h2>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id='report_state_wizard_ksc'>
+        <t t-call='web.html_container'>
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1>State Report</h1>
+                        <li>State Name :
+                            <t t-esc="o.state_name"/>
+                        </li>
+                        <li>State Code :
+                            <t t-esc="o.state_code"/>
+                        </li>
+                        <li>country:
+                            <t t-esc="o.country_id.country_name"/>
+                        </li>
+                        <li>cities:
+                            <t t-esc="o.cities_ids.city_name"/>
+                        </li>
+                    </div>
+                    <div class="page">
+                        <h1> <t t-esc="name"/></h1>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

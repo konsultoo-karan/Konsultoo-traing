@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_state_report" model="ir.actions.report">
+            <field name="name">Print State</field>
+            <field name="model">res.state.ksc</field>
+            <!--        <field name="report_type">qweb-pdf</field>-->
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">res_localization_ksc.state_report_id_1</field>
+            <field name="report_file">res_localization_ksc.state_report_id_1</field>
+            <field name="binding_model_id" ref="res_localization_ksc.model_res_state_ksc"/>
+            <field name="binding_type">report</field>
+        </record>
+
+
+        <record id="action_report_state_wizard_id_1" model="ir.actions.report">
+            <field name="name">Print State Wizard</field>
+            <field name="model">res.state.ksc</field>
+            <!--        <field name="report_type">qweb-pdf</field>-->
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">res_localization_ksc.report_state_wizard_ksc</field>
+            <field name="report_file">res_localization_ksc.report_state_wizard_ksc</field>
+            <!--        <field name="binding_model_id" ref="res_localization_ksc.model_res_state_ksc"/>-->
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+
+</odoo>
