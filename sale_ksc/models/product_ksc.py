@@ -8,6 +8,7 @@ class ProductResDemo(models.Model):
     name = fields.Char(string='Product Name')
     sku = fields.Char(string='Sku')
     weight = fields.Float(string='Weight')
+    volume = fields.Float(string='Volume')
     length = fields.Float(string='length')
     barcode = fields.Char(string='Barcode')
 

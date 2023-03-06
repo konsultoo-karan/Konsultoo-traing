@@ -6,10 +6,8 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="sku"/>
                 <field name="weight"/>
-                <field name="length"/>
-                <field name="barcode"/>
+                <field name="volume"/>
                 <field name="uom_id"/>
             </tree>
         </field>
@@ -26,6 +24,7 @@
                             <field name="name"/>
                             <field name="sku"/>
                             <field name="weight"/>
+                            <field name="volume"/>
                             <field name="length"/>
                             <field name="barcode"/>
                         </group>
@@ -63,5 +62,12 @@
     <menuitem id="menu_product_ksc_2" name="product ksc" parent="product_category_ksc_id_1"
               action="action_product_ksc"
               sequence="2"/>
+
+    <!--    <menuitem id="menu_product_ksc" name="sale ksc 2"/>-->
+    <!--    <menuitem id="menu_product_ksc_2" name="Product" parent="product_category_menu"-->
+    <!--              />-->
+    <!--    <menuitem id='product_category_ksc_id_2' name='product ksc' parent="menu_product_ksc_2"-->
+    <!--              action="action_product_ksc"-->
+    <!--              sequence="2"/>-->
 
 </odoo>

@@ -5,3 +5,4 @@ sale_ksc.access_product_uom_category_ksc,access_product_uom_category_ksc,sale_ks
 sale_ksc.access_product_uom_ksc,access_product_uom_ksc,sale_ksc.model_product_uom_ksc,base.group_user,1,1,1,1
 sale_ksc.access_sale_order_ksc,access_sale_order_ksc,sale_ksc.model_sale_order_ksc,base.group_user,1,1,1,1
 sale_ksc.access_res_partner_ksc,access_res_partner_ksc,sale_ksc.model_res_partner_ksc,base.group_user,1,1,1,1
+sale_ksc.access_sale_order_line_ksc,access_sale_order_line_ksc,sale_ksc.model_sale_order_line_ksc,base.group_user,1,1,1,1

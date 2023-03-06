@@ -7,9 +7,6 @@
                     <t t-call="web.internal_layout">
 
                         <div class="page">
-                            <!--                            <h1>-->
-                            <!--                                <t field="doc.name"/>-->
-                            <!--                            </h1>-->
                             <div class="oe_structure"/>
                             <div class="row mt32 mb32" id="informations">
                                 <div class="col-auto col-3 mw-100 mb-2">
@@ -28,10 +25,6 @@
                                     <strong>country:</strong>
                                     <p class="m-0" t-field="doc.country_id"/>
                                 </div>
-                                <!--                                <div class="col-auto col-3 mw-100 mb-2">-->
-                                <!--                                    <strong>state name:</strong>-->
-                                <!--                                    <p class="m-0" t-field="doc.name"/>-->
-                                <!--                                </div>-->
                             </div>
                             <table class="table table-sm o_main_table">
                                 <thead style="display: table-row-group">

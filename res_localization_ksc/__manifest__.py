@@ -4,7 +4,7 @@
     'summary': 'country  information',
     'description': """Helps to show Customer information""",
     'category': 'Human Resources',
-    'depends': ['base'],
+    'depends': ['base','sale'],
     'data': [
         'security/ir.model.access.csv',
         'reports/state_report.xml',
@@ -13,6 +13,7 @@
         'views/res_country_demo2.xml',
         'views/res_state_ksc.xml',
         'views/res_city_view.xml',
+        'views/sale_order_inherit.xml',
         "wizard/state_wizard.xml",
     ],
 

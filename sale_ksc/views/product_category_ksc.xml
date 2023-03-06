@@ -57,9 +57,7 @@
     </record>
 
     <menuitem id="product_category_menu" name="sale ksc"/>
-    <menuitem id="product_category_ksc_id_1" name="My Sales" parent="product_category_menu"
-              sequence="1"/>
-    <menuitem id='product_category_ksc_id_2' name='Category' parent="product_category_ksc_id_1" action="action_product_category_ksc"
-    sequence="1"/>
+    <menuitem id="product_category_ksc_id_1" name="My Sales"/>
+    <menuitem id='product_category_ksc_id_2' name='Category' parent="product_category_ksc_id_1" action="action_product_category_ksc"/>
 
 </odoo>

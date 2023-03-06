@@ -7,15 +7,17 @@
             <tree>
                 <field name="name"/>
                 <field name="user_id"/>
-                <field name="customer_id"/>
+                <field name="partner_id"/>
                 <field name="invoice_id" domain="[('address_type', '=', 'invoice')]"/>
                 <field name="shiping_id" domain="[('address_type', '=', 'contact')]"/>
+                <field name="total_weight"/>
+                <field name="total_volume"/>
             </tree>
         </field>
     </record>
 
     <record id="sale_order_ksc_form" model="ir.ui.view">
-        <field name="name">sale.order.ksc.tree</field>
+        <field name="name">sale.order.ksc.form</field>
         <field name="model">sale.order.ksc</field>
         <field name="arch" type="xml">
             <form>
@@ -28,11 +30,18 @@
                             <field name="state"/>
                         </group>
                         <group>
-                            <field name="customer_id"/>
+                            <field name="partner_id"/>
                             <field name="invoice_id"/>
                             <field name="shiping_id"/>
+                            <field name="total_weight"/>
+                            <field name="total_volume"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page name='Order Line' string='Order Line'>
+                            <field name="order_line_ids"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
