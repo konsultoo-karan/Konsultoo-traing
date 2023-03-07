@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dealer_information_tree" model="ir.ui.view">
+        <field name="name">dealer.information.tree</field>
+        <field name="model">dealer.information</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="number"/>
+                <field name="street"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dealer_information_form" model="ir.ui.view">
+        <field name="name">dealer.information.form</field>
+        <field name="model">dealer.information</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_registration_class" type="object" class="oe_stat_button" icon="fa-list-alt">
+                            <div class="o_stat_info">
+                                <field name="count_dealer" class="o_stat_value"/>
+                                <span class="o_stat_text">Registered</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="number"/>
+                            <field name="street"/>
+                        </group>
+                        <group>
+                            <field name="city_id"/>
+                            <field name="state_id"/>
+                            <field name="country_id"/>
+                            <field name="zip_code"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dealer_information">
+        <field name="name">Dealer information</field>
+        <field name="res_model">dealer.information</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="dealer_information_menu" name="Dealer Information"/>
+    <menuitem id="dealer_information_id_1" name="Information"/>
+    <menuitem id='dealer_information_id_2' name='Dealer' parent="dealer_information_id_1"
+              action="action_dealer_information"/>
+</odoo>
